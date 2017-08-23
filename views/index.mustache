@@ -1,0 +1,17 @@
+<h1>PokeDex</h1>
+<form class="" action="/add" method="post">
+  <input type="text" name="name" value="" placeholder="Name" required>
+  <input type="number" name="number" value="" placeholder="No." required>
+  <input type="text" name="type" value="" placeholder="Type(s)">
+  <select class="" name="stage">
+    <option name="stage" value="basic">Basic</option>
+    <option name="stage" value="1">Stage 1</option>
+    <option name="stage" value="2">State 2</option>
+  </select>
+  <button type="submit" name="submit">Add</button>
+</form>
+{{#data}}
+  {{name}}
+  {{_id}}
+  {{number}}
+{{/data}}
