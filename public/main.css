@@ -1,3 +1,37 @@
 .tag {
   text-transform: capitalize;
 }
+.results {
+  display: flex;
+  flex-flow: row wrap;
+}
+.pokeCard {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  flex: 1 25%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 10px;
+}
+.info {
+  margin: 10px;
+}
+.buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.buttons a {
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+}
+.edit {
+  background: green;
+  border-top-right-radius: 5px;
+}
+.delete {
+  background: orange;
+  border-bottom-right-radius: 5px;
+}

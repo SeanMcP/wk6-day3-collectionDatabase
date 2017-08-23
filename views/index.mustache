@@ -10,7 +10,8 @@
   </select>
   <button type="submit" name="submit">Add</button>
 </form>
-{{#data}}
+<div class="results">
+  {{#data}}
   <div class="pokeCard">
     <div class="info">
       <h2>#{{number}}) {{name}}</h2>
@@ -21,8 +22,9 @@
       </p>
     </div>
     <div class="buttons">
-      <a href="/edit/{{_id}}">Edit</a>
-      <a href="/delete/{{_id}}">Delete</a>
+      <a class="edit" href="/edit/{{_id}}">Edit</a>
+      <a class="delete" href="/delete/{{_id}}">Delete</a>
     </div>
   </div>
-{{/data}}
+  {{/data}}
+</div>
