@@ -8,20 +8,24 @@
     <option name="stage" value="1">Stage 1</option>
     <option name="stage" value="2">State 2</option>
   </select>
+  <input type="text" name="avatarUrl" value="" placeholder="Image url">
   <button type="submit" name="submit">Add</button>
 </form>
-<div class="results">
+<div class="results" style="display: flex; flex-flow: row wrap; justify-content: center;">
   {{#data}}
-  <div class="pokeCard">
+  <div class="pokeCard" style="border: 1px solid lightgray; flex-basis: 20%; margin: 10px;">
     <div class="info">
-      <h2>#{{number}}) {{name}}</h2>
-      <p class="tag">
+      {{#avatarUrl}}
+        <img src="{{avatarUrl}}" alt="{{name}}" style="margin: 5%; width: 90%;">
+      {{/avatarUrl}}
+      <h2 style="margin: 10px;">#{{number}}) {{name}}</h2>
+      <p class="tag" style="margin: 10px;">
         {{#type}}
         {{.}}
         {{/type}} Pokemon
       </p>
     </div>
-    <div class="buttons">
+    <div class="buttons" style="display: flex; flex-flow: row nowrap; justify-content: space-between; margin: 10px;">
       <a class="edit" href="/edit/{{_id}}">Edit</a>
       <a class="delete" href="/delete/{{_id}}">Delete</a>
     </div>

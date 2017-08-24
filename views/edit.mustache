@@ -1,15 +1,38 @@
-<form class="" action="/edit" method="post">
+<h2>Edit an entry</h2>
+
+<div class="results">
+  {{#data}}
+  <div class="pokeCard">
+    <div class="info">
+      {{#avatarUrl}}
+        <img src="{{avatarUrl}}" alt="{{name}}" style="float: left; margin: 10px; width: 130px;">
+      {{/avatarUrl}}
+      <h2>#{{number}}) {{name}}</h2>
+      <p class="tag">
+        {{#type}}
+        {{.}}
+        {{/type}} Pokemon
+      </p>
+    </div>
+  </div>
+</div>
+<hr style="clear:both;">
+<form class="" action="/update/{{_id}}" method="post">
   <input type="text" name="name" value="{{name}}" placeholder="Name" required>
   <input type="number" name="number" value="{{number}}" placeholder="No." required>
-  <input type="text" name="type" value="
-  {{#types}}
-    {{.}}
-  {{/types}}
-  " placeholder="Type(s)">
+  <input type="text" name="type" value=
+  "{{#type}}{{.}} {{/type}}"
+  placeholder="Type(s)">
   <select class="" name="stage">
-    <option name="stage" value="basic">Basic</option>
-    <option name="stage" value="1">Stage 1</option>
-    <option name="stage" value="2">State 2</option>
+    {{#stage}}
+      {{#basic}}
+        <option name="stage" value="basic" selected>Basic</option>
+        <option name="stage" value="1">Stage 1</option>
+        <option name="stage" value="2">State 2</option>
+      {{/basic}}
+    {{/stage}}
   </select>
+  <input type="text" name="avatarUrl" value="{{avatarUrl}}" placeholder="Image url">
   <button type="submit" name="submit">Edit</button>
 </form>
+{{/data}}

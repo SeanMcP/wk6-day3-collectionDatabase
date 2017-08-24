@@ -6,6 +6,7 @@ mongoose.connect('mongodb://localhost:27017/pokeDirectory')
 
 const pokeSchema = new Schema({
   name: {type: String, required: true, unique: true},
+  avatarUrl: String,
   type: [String],
   number: {
     type: Number,
